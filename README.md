@@ -5,28 +5,28 @@
 ## Installation
 criar um NOVO projeto:
 1. NO GERENCIADOR DE ARQUIVOS:
-Crie um diretório na pasta projetos-python e de um número sequencial.
+Crie um diretório na pasta projetos-python e de um nome (diretório_criacao).
 
 2. NO TERMINAL:
 
-cd 22_mercado
+cd diretório_criação
 python -m venv .venv
 .venv\Scripts\activate
 uv pip install crewai
 
 3. ATENCAO: SE VOCÊ CRIA UM NOVO PROJETO OU FLOW OU PIPELINE, DE ESSES COMANDOS:
-NO TERMINAL:
-crewai create crew vidmarmercado
+NO TERMINAL: (tudo isso está descrito no docs.crewai.com):
+
 crewai create crew nome_do_projeto
 ou
 crewai create flow nome_do_flow
 ou
 crewai create pipeline nome_do_pipeline
 
+Escolha: openai, GPT-4o-mini, e coloque sua chave openai obtida em platform.openai.com
+APOS A CRIACAO DO CREWAI, APAGUE O .venv do item 1 (diretório_criacao), pois esse venv foi criado para só para estabelecer a estrutura do crewai create crew
 
-APOS A CRIACAO DO CREWAI, APAGUE O .venv NO 22_MERCADO
-
-cd vidmarmercado
+cd nome_do_projeto
 python -m venv .venv
 .venv\Scripts\activate  # Ativa o novo ambiente virtual dentro de vidmarmercado
 
@@ -38,23 +38,19 @@ uv sync
 
 pip freeze | Select-String "crewai"
 
-
-
-NUNCA USE WEBSITE SEARCH TOOL, ISSO CRIA O DB E ESTRAGA TUDO NO STREAMLIT
+tudo o que for instalar a mais como pip no terminal, colocque uv na frente.
 
 4. NO TERMINAL AVANÇE PARA O NOVO DIRETORIO CRIADO
 
-cd novo_diretório
-feche todas as abas do open editors, cada uma aberta, não deixa atualizar.
+AGORA FAÇA TODA A CRIAÇÃO DA CREW E RETORNE (como vc escolheu crewai create crew, já vem um esboço funcional que é só rodar que funciona).
 
-
-AGORA FAÇA TODA A CRIAÇÃO DA CREW E RETORNE
 Ensure you have Python >=3.10 <=3.13 installed on your system. 
 This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
 5. Para rodar o programa:
 
 crewai run      # Para executar o seu projeto principal
+
 
 
 6. PARA QUEM JÁ CRIOU O AMBIENTE VIRTUAL E ESTÁ RETORNANDO:

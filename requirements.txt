@@ -1,5 +1,5 @@
-streamlit
-crewai
-crewai-tools
-python-dotenv
-openai
+streamlit==1.25.0
+crewai==0.70.1
+crewai-tools==0.12.1
+python-dotenv==1.0.1
+openai==1.54.1
