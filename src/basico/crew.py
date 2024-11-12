@@ -1,5 +1,9 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
+from dotenv import load_dotenv
+from basico.my_llm import MyLLM
+
+load_dotenv()
 
 # Uncomment the following line to use an example of a custom tool
 # from basico.tools.custom_tool import MyCustomTool
@@ -16,14 +20,16 @@ class BasicoCrew():
 		return Agent(
 			config=self.agents_config['researcher'],
 			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
-			verbose=True
+			verbose=True,
+			llm=MyLLM.gpt4o_mini_2024_07_18,
 		)
 
 	@agent
 	def reporting_analyst(self) -> Agent:
 		return Agent(
 			config=self.agents_config['reporting_analyst'],
-			verbose=True
+			verbose=True,
+			llm=MyLLM.gpt4o_mini_2024_07_18,
 		)
 
 	@task

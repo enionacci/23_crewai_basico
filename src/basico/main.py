@@ -12,7 +12,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs'
+        'topic': 'Mac and cheese best receipts'
     }
     BasicoCrew().crew().kickoff(inputs=inputs)
 

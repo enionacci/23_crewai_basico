@@ -7,7 +7,7 @@ import streamlit as st
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "src")))
 
 # Importa BasicoCrew após adicionar src ao caminho
-from basico.crew import BasicoCrew
+from src.basico.crew import BasicoCrew
 
 # Título e entrada de texto no Streamlit
 st.title("Basico do CrewAI")
