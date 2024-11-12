@@ -1,5 +1,3 @@
-import os
-import sys 
 import streamlit as st
 from src.basico.crew import BasicoCrew
 
