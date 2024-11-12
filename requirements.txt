@@ -6,3 +6,4 @@ requests==2.32.3                 # Chamadas HTTP (caso precise)
 streamlit==1.39.0                # Interface Web
 fpdf2==2.8.1                     # Manipulação de PDFs (se necessário)
 python-docx==0.8.11              # Geração de arquivos Word
+pysqlite3-binary
