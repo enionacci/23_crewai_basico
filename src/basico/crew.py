@@ -1,9 +1,16 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from dotenv import load_dotenv
-# from basico.my_llm import MyLLM
+from src.basico.custom_agent import CustomAgent  # Importe o agente personalizado
 
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
+
+import os
+import openai
+# Configure a chave da API
+api_key = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = api_key  # Adicione esta linha
+openai.api_key = api_key
 
 # Uncomment the following line to use an example of a custom tool
 # from basico.tools.custom_tool import MyCustomTool
@@ -16,7 +23,7 @@ class BasicoCrew():
 	"""Basico crew"""
 
 	@agent
-	def researcher(self) -> Agent:
+	def researcher(self) -> CustomAgent:
 		return Agent(
 			config=self.agents_config['researcher'],
 			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
@@ -25,7 +32,7 @@ class BasicoCrew():
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def reporting_analyst(self) -> CustomAgent:
 		return Agent(
 			config=self.agents_config['reporting_analyst'],
 			verbose=True,
