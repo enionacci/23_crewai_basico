@@ -12,7 +12,7 @@ class CustomAgent(Agent):
     
     def run(self, prompt):
         response = openai.ChatCompletion.create(
-            model="gpt-4o-mini",
+            model="gpt-3.5-turbo",  # Use um modelo válido
             messages=[{"role": "user", "content": prompt}]
         )
         return response['choices'][0]['message']['content']
